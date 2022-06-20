@@ -7,7 +7,7 @@ class ErrorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BuildAppBar(enteredTitle: "Error Page"),
+      appBar: BuildAppBar(enteredTitle: const Text("Error Page")),
     );
   }
 }
