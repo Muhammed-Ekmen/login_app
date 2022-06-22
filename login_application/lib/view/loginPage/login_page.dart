@@ -21,7 +21,9 @@ class LoginPage extends StatelessWidget {
               alignment: Alignment.center,
               width: MediaQuery.of(context).size.width,
               height: 50,
-              child: SvgPicture.network("https://servislet.com/img/logo.svg",),
+              child: SvgPicture.network(
+                "https://servislet.com/img/logo.svg",
+              ),
             ),
           ),
           body: const Login_Page_Body(),

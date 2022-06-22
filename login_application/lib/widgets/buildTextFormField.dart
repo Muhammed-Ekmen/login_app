@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:login_application/data/constants/color_constants.dart';
 import 'package:login_application/data/constants/text_constants.dart';
-import 'package:get/get.dart';
-
 class BuildTextFormField extends StatelessWidget {
   BuildTextFormField({
     Key? key,
+    required this.enteredFieldKey,
     required this.enteredController,
+    this.enteredKeyboardType,
     this.enteredHintText,
     this.enteredSuffixIcon,
     this.enteredBorderRadius,
@@ -17,25 +17,25 @@ class BuildTextFormField extends StatelessWidget {
   Widget? enteredSuffixIcon;
   Icon? enteredPrefixIcon;
   BorderRadius? enteredBorderRadius;
+  Key? enteredFieldKey;
+  TextInputType? enteredKeyboardType;
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(20),
       child: TextFormField(
+        cursorColor: appMainColor,
+        key: enteredFieldKey,
         style: textFormTextStyle,
         controller: enteredController,
         validator: (incoming) {
-          if (incoming!.isEmpty == true) {
-            Get.snackbar(
-              "It Can Not Be Empty!",
-              "Please Check The Gaps...",
-              backgroundColor: appMainColor.withOpacity(0.7),
-            );
+          if (incoming!.isEmpty) {
+            return "It Can Not Be Empty!";
           } else {
             return null;
           }
-          return null;
         },
+        keyboardType: enteredKeyboardType,
         decoration: InputDecoration(
           border: enteredBorderRadius == null
               ? InputBorder.none

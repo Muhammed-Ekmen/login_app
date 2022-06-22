@@ -17,6 +17,7 @@ class BuildShaderMask extends StatelessWidget {
       child: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
+            colorFilter: ColorFilter.mode(Colors.black38, BlendMode.darken),
             fit: BoxFit.fill,
             image: AssetImage("assets/images/finalBackground.png"),
           ),

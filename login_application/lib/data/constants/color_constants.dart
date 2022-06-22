@@ -1,4 +1,4 @@
 import 'package:flutter/material.dart';
 
 const Color appMainColor=Colors.black;
-Color appTextFieldColor=Colors.grey.shade200;
+Color appTextFieldColor=Colors.grey.shade400;

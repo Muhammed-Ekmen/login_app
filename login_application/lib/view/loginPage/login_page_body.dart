@@ -10,50 +10,49 @@ class Login_Page_Body extends GetView<Login_Page_Controller> {
   const Login_Page_Body({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: controller.formKey,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          BuildContainer(
-            enteredWidht: MediaQuery.of(context).size.width,
-            enteredHeight: MediaQuery.of(context).size.height / 3,
-            enteredChild: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                BuildTextFormField(
-                  enteredPrefixIcon: const Icon(
-                    FontAwesomeIcons.envelope,
-                    color: appMainColor,
-                  ),
-                  enteredBorderRadius: const BorderRadius.only(
-                      topRight: Radius.circular(10),
-                      topLeft: Radius.circular(10)),
-                  enteredController: controller.emailController,
-                  enteredHintText: "Please enter the Email Adress",
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        BuildContainer(
+          enteredWidht: MediaQuery.of(context).size.width,
+          enteredHeight: MediaQuery.of(context).size.height / 3,
+          enteredChild: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              BuildTextFormField(
+                enteredFieldKey: controller.email_key,
+                enteredPrefixIcon: const Icon(
+                  FontAwesomeIcons.envelope,
+                  color: appMainColor,
                 ),
-                BuildTextFormField(
-                  enteredPrefixIcon: const Icon(
-                    FontAwesomeIcons.key,
-                    color: Colors.black,
-                  ),
-                  enteredController: controller.passwordController,
-                  enteredHintText: "Please Enter Password",
+                enteredBorderRadius: const BorderRadius.only(
+                    topRight: Radius.circular(10),
+                    topLeft: Radius.circular(10)),
+                enteredController: controller.emailController,
+                enteredHintText: "Please enter the Email Adress",
+              ),
+              BuildTextFormField(
+                enteredFieldKey: controller.password_key,
+                enteredPrefixIcon: const Icon(
+                  FontAwesomeIcons.key,
+                  color: Colors.black,
                 ),
-                IconButton(
-                  icon: const Icon(
-                    FontAwesomeIcons.arrowRightFromBracket,
-                    color: Colors.white,
-                  ),
-                  onPressed: () {
-                    controller.verificationLogIn();
-                  },
+                enteredController: controller.passwordController,
+                enteredHintText: "Please Enter Password",
+              ),
+              IconButton(
+                icon: const Icon(
+                  FontAwesomeIcons.arrowRightFromBracket,
+                  color: Colors.white,
                 ),
-              ],
-            ),
+                onPressed: () {
+                  controller.verificationLogIn();
+                },
+              ),
+            ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
