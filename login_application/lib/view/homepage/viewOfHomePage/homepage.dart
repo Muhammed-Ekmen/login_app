@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_application/data/constants/text_constants.dart';
 import 'package:login_application/view/homepage/viewOfHomePage/homepage_body.dart';
 import 'package:login_application/view/homepage/controller/homepage_controller.dart';
 import 'package:login_application/widgets/buildAppBar.dart';
@@ -12,9 +13,9 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: BuildAppBar(
-        enteredTitle: const Text("HomePage"),
+        enteredTitle: const Text(titleOfHomePage,style: titleTextStyle,),
       ),
-      body: HomePage_Body(),
+      body: const HomePage_Body(),
     );
   }
 }

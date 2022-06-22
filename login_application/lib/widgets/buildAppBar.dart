@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_application/data/constants/color_constants.dart';
 import 'package:login_application/data/constants/text_constants.dart';
 
 class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -10,11 +11,11 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      iconTheme: const IconThemeData(color: Colors.black),
+      iconTheme:  IconThemeData(color: appTextFieldColor),
       actions: enteredActionList,
       titleTextStyle: titleTextStyle,
       elevation: 0,
-      backgroundColor: Colors.transparent,
+      backgroundColor: appMainColor,
       flexibleSpace: FlexibleSpaceBar(
         centerTitle: true,
         title: enteredTitle,
