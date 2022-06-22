@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:login_application/view/loginPage/login_page_body.dart';
-import 'package:login_application/view/loginPage/login_page_controllers.dart';
+import 'package:login_application/view/loginPage/controller/login_page_controllers.dart';
+import 'package:login_application/view/loginPage/viewOfLogin/login_page_body.dart';
 import 'package:login_application/widgets/buildAppBar.dart';
 import 'package:get/get.dart';
 import 'package:login_application/widgets/buildShaderMask.dart';

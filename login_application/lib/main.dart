@@ -9,6 +9,7 @@ Future<void> main() async {
   try {
     WidgetsFlutterBinding.ensureInitialized();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
+    ErrorWidget.builder = (FlutterErrorDetails details) => const ErrorPage();
     runApp(const MyApp());
   } catch (e) {
     return Future.error(e);

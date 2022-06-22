@@ -1,6 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:login_application/data/constants/color_constants.dart';
+import 'package:login_application/widgets/buildAlert.dart';
 
 class Login_Page_Controller extends GetxController {
   TextEditingController emailController = TextEditingController();
@@ -16,18 +17,25 @@ class Login_Page_Controller extends GetxController {
     showPassword = showPassword.value == true ? RxBool(false) : RxBool(true);
   }
 
-  verificationLogIn() {
+  verificationLogIn(BuildContext context) {
     if (email_key.currentState!.validate() == true &&
         password_key.currentState!.validate() == true) {
       emailController.clear();
       passwordController.clear();
       Get.toNamed("/homepage");
     } else {
-      Get.snackbar(
-        "It Can Not Be Empty!",
-        "Please Check The Gaps...",
-        backgroundColor: appMainColor.withOpacity(0.7),
-      );
+      showCupertinoDialog(
+          barrierDismissible: true,
+          context: context,
+          builder: (context) {
+            return Theme(
+              data: ThemeData.light(),
+              child: BuildAlertDialog(
+                enteredTitle: "It Can Not Be Empty!",
+                enteredContent: "Please Check The Gaps...",
+              ),
+            );
+          });
     }
   }
 }

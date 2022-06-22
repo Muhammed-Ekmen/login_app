@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:login_application/data/constants/box_decorations.dart';
 import 'package:login_application/data/constants/color_constants.dart';
-import 'package:login_application/view/loginPage/login_page_controllers.dart';
-import 'package:login_application/widgets/buildContainer.dart';
+import 'package:login_application/view/loginPage/controller/login_page_controllers.dart';
 import 'package:login_application/widgets/buildTextFormField.dart';
 
 class Login_Page_Body extends GetView<Login_Page_Controller> {
@@ -13,10 +13,11 @@ class Login_Page_Body extends GetView<Login_Page_Controller> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        BuildContainer(
-          enteredWidht: MediaQuery.of(context).size.width,
-          enteredHeight: MediaQuery.of(context).size.height / 3,
-          enteredChild: Column(
+        Container(
+          decoration: BoxDecorations.loginBoxDecoration,
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height / 3,
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               BuildTextFormField(
@@ -46,7 +47,7 @@ class Login_Page_Body extends GetView<Login_Page_Controller> {
                   color: Colors.white,
                 ),
                 onPressed: () {
-                  controller.verificationLogIn();
+                  controller.verificationLogIn(context);
                 },
               ),
             ],
