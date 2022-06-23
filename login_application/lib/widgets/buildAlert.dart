@@ -1,5 +1,8 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/cupertino.dart';
 
+// ignore: must_be_immutable
 class BuildAlertDialog extends StatelessWidget {
   BuildAlertDialog({
     Key? key,

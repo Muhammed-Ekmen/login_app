@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:login_application/data/constants/color_constants.dart';
 import 'package:login_application/view/loginPage/controller/login_page_controllers.dart';
 import 'package:login_application/view/loginPage/viewOfLogin/login_page_body.dart';
 import 'package:login_application/widgets/buildAppBar.dart';
@@ -8,7 +9,7 @@ import 'package:login_application/widgets/buildShaderMask.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({Key? key}) : super(key: key);
-  final Login_Page_Controller controller = Get.put(Login_Page_Controller());
+  final LoginPageController controller = Get.put(LoginPageController());
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -17,6 +18,7 @@ class LoginPage extends StatelessWidget {
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: BuildAppBar(
+            enteredColor: loginAppBarColor,
             enteredTitle: Container(
               alignment: Alignment.center,
               width: MediaQuery.of(context).size.width,
@@ -26,7 +28,7 @@ class LoginPage extends StatelessWidget {
               ),
             ),
           ),
-          body: const Login_Page_Body(),
+          body: const LoginPageBody(),
         ),
       ],
     );

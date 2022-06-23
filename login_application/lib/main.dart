@@ -36,3 +36,13 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
+///image cart
+///texformfield
+///dosyalama yapisi
+///getX
+///her dosya file tek bir ozellik olmaliu view yada data yada widget
+///
+///look at the other big flutter projects structure
+///http kullan

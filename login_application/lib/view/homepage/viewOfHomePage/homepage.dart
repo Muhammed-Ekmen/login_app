@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
-  final HomePage_Controller controller = Get.put(HomePage_Controller());
+  final HomePageController controller = Get.put(HomePageController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
       appBar: BuildAppBar(
         enteredTitle: const Text(titleOfHomePage,style: titleTextStyle,),
       ),
-      body: const HomePage_Body(),
+      body: const HomePageBody(),
     );
   }
 }

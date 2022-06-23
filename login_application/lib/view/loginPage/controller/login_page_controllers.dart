@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:login_application/widgets/buildAlert.dart';
 
-class Login_Page_Controller extends GetxController {
+class LoginPageController extends GetxController {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  final email_key = GlobalKey<FormFieldState>();
-  final password_key = GlobalKey<FormFieldState>();
+  final emailKey = GlobalKey<FormFieldState>();
+  final passwordKey = GlobalKey<FormFieldState>();
   final formKey = GlobalKey<FormState>();
 
   RxBool showPassword = RxBool(false);
@@ -18,8 +18,8 @@ class Login_Page_Controller extends GetxController {
   }
 
   verificationLogIn(BuildContext context) {
-    if (email_key.currentState!.validate() == true &&
-        password_key.currentState!.validate() == true) {
+    if (emailKey.currentState!.validate() == true &&
+        passwordKey.currentState!.validate() == true) {
       emailController.clear();
       passwordController.clear();
       Get.toNamed("/homepage");
