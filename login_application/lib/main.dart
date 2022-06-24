@@ -11,7 +11,7 @@ Future<void> main() async {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
     ErrorWidget.builder = (FlutterErrorDetails details) {
       return const ErrorPage();
-      details.printError();
+      // details.printError();  
     } ;
     runApp(const MyApp());
   } catch (e) {

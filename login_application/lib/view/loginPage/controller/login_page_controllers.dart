@@ -9,13 +9,6 @@ class LoginPageController extends GetxController {
 
   final emailKey = GlobalKey<FormFieldState>();
   final passwordKey = GlobalKey<FormFieldState>();
-  final formKey = GlobalKey<FormState>();
-
-  RxBool showPassword = RxBool(false);
-
-  changePasswordStatue() {
-    showPassword = showPassword.value == true ? RxBool(false) : RxBool(true);
-  }
 
   verificationLogIn(BuildContext context) {
     if (emailKey.currentState!.validate() == true &&
@@ -37,5 +30,12 @@ class LoginPageController extends GetxController {
             );
           });
     }
+  }
+
+  RxBool showPassword = false.obs;
+
+  changePasswordStatue() {
+    showPassword.value = !(showPassword.value);
+    update();
   }
 }
