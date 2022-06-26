@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:login_application/data/constants/color_constants.dart';
 import 'package:login_application/data/route/get_routes.dart';
-import 'package:login_application/view/errorPage/error_page.dart';
+import 'errorPage/error_page.dart';
 
 Future<void> main() async {
   try {

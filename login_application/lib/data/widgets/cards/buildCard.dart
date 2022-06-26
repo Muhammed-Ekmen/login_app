@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:login_application/data/constants/color_constants.dart';
+import 'package:login_application/data/constants/boxDecorations/build_card_box_decoration.dart';
 
 class BuildCard extends StatelessWidget {
   BuildCard({Key? key, this.enteredChild}) : super(key: key);
@@ -10,10 +10,7 @@ class BuildCard extends StatelessWidget {
       margin: const EdgeInsets.all(10),
       height: MediaQuery.of(context).size.height / 3,
       width: MediaQuery.of(context).size.width / 1.2,
-      decoration: BoxDecoration(
-        color: appCardColor,
-        borderRadius: BorderRadius.circular(10),
-      ),
+      decoration: buildCardBoxDecoration,
       child: enteredChild,
     );
   }

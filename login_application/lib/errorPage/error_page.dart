@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:login_application/widgets/buildAppBar.dart';
+import 'package:login_application/data/widgets/buildAppBar.dart';
 
 class ErrorPage extends StatelessWidget {
   const ErrorPage({Key? key}) : super(key: key);

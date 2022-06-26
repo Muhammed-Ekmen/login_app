@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:login_application/view/homepage/models/news_model.dart';
+
+import '../models/news_model.dart';
 
 Future<NewsModel> getNewsData({String country = "tr"}) async {
   try {

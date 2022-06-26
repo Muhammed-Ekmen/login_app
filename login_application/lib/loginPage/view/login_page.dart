@@ -3,11 +3,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:login_application/data/constants/boxDecorations/login_box_decoration.dart';
 import 'package:login_application/data/constants/color_constants.dart';
-import 'package:login_application/view/loginPage/controller/login_page_controllers.dart';
-import 'package:login_application/widgets/buildAppBar.dart';
 import 'package:get/get.dart';
-import 'package:login_application/widgets/buildShaderMask.dart';
-import 'package:login_application/widgets/buildTextFormField.dart';
+import 'package:login_application/loginPage/controller/login_page_controllers.dart';
+import '../../data/widgets/buildAppBar.dart';
+import '../../data/widgets/buildShaderMask.dart';
+import '../../data/widgets/buildTextFormField.dart';
+import '../utilities/verificationOfTextFormField.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({Key? key}) : super(key: key);
@@ -82,7 +83,8 @@ class LoginPage extends StatelessWidget {
                   color: Colors.white,
                 ),
                 onPressed: () {
-                  controller.verificationLogIn(context);
+                  verificationLogIn(context);
+                  // controller.verificationLogIn(context);
                 },
               ),
             ],

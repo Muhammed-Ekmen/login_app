@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:login_application/data/constants/fake_api.dart';
 import 'package:login_application/data/constants/text_constants.dart';
-import 'package:login_application/view/homepage/controller/homepage_controller.dart';
-import 'package:login_application/widgets/buildAppBar.dart';
 import 'package:get/get.dart';
-import 'package:login_application/widgets/buildDivider.dart';
-import 'package:login_application/widgets/buildExpansionTile.dart';
-import 'package:login_application/widgets/cards/buildCard.dart';
-import 'package:login_application/widgets/cards/buildImageNetworkCart.dart';
+import 'package:login_application/homepage/controller/homepage_controller.dart';
+import '../../data/widgets/buildAppBar.dart';
+import '../../data/widgets/buildDivider.dart';
+import '../../data/widgets/buildExpansionTile.dart';
+import '../../data/widgets/cards/buildCard.dart';
+import '../../data/widgets/cards/buildImageNetworkCart.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
