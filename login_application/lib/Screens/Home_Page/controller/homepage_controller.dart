@@ -1,14 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:login_application/homepage/service/get_news.dart';
-import '../models/news_model.dart';
+import 'package:login_application/homepage/services/get_news.dart';
+import '../models/news_models/news_model.dart';
 
 class HomePageController extends GetxController {
-  // ignore: non_constant_identifier_names
-  
-  // To Will Delete
-  // Rx<NewsModel> newList = NewsModel().obs;
-
-  /// list Trial
   dynamic allCountryList = <Rx<NewsModel>>[].obs;
 
   RxBool loading = false.obs;
@@ -21,13 +16,13 @@ class HomePageController extends GetxController {
 
   void getNews() async {
     loading.value = true;
-    // newList.value = await getNewsData();
     allCountryList=await getNewsDataList();
     loading.value = false;
     update();
+    debugPrint(loading.value.toString());
   }
 
-  changeLoadingStatue() {
-    loading = loading.value == true ? RxBool(false) : RxBool(true);
-  }
+  // changeLoadingStatue() {
+  //   loading = loading.value == true ? RxBool(false) : RxBool(true);
+  // }
 }

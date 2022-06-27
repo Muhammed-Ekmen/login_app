@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import '../models/news_model.dart';
+import '../models/news_models/news_model.dart';
 
 List<String> countryCodes = [
   "tr",
