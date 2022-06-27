@@ -19,11 +19,12 @@ class BuildNetWorkImageCart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // margin: const EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       height: incomingHeight,
       width: incomingWidht,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
+        border: Border.all(width: 5,color: appMainColor),
         color: incomingColor,
         shape: incomingShape ?? BoxShape.rectangle,
         image: DecorationImage(

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:login_application/route/get_routes.dart';
-
 import 'Screens/errorPage/error_page.dart';
 
 Future<void> main() async {
@@ -11,8 +10,8 @@ Future<void> main() async {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
     ErrorWidget.builder = (FlutterErrorDetails details) {
       return const ErrorPage();
-      // details.printError();  
-    } ;
+      // details.printError();
+    };
     runApp(const MyApp());
   } catch (e) {
     return Future.error(e);
@@ -21,9 +20,7 @@ Future<void> main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-  
   get appMainColor => null;
-
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -38,7 +35,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 
 ///image cart
 ///texformfield

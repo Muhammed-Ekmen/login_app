@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:login_application/data/fake_api.dart';
+import 'package:url_launcher/link.dart';
 import '../../../constants/textStyle/textStyleConstant.dart';
 import '../../../constants/texts/text_constants.dart';
 import '../../../widgets/buildAppBar.dart';
@@ -14,33 +15,33 @@ import '../models/news_models/news_model.dart';
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
   final HomePageController controller = Get.put(HomePageController());
-  
+
   get titleTextStyle => null;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      appBar: BuildAppBar(
-        enteredTitle:  Text(
-          titleOfHomePage,
-          style: titleTextStyle,
+        resizeToAvoidBottomInset: false,
+        appBar: BuildAppBar(
+          enteredTitle: const Text(
+            titleOfHomePage,
+          ),
         ),
-      ),
-      body: controller.loading.value == true
-          ? const Center(child: CircularProgressIndicator())
-          : ListView.builder(
-              itemCount: countryCodes.keys.toList().length,
-              itemBuilder: (BuildContext context, int index) {
-                var items = controller.allCountryList[index] as NewsModel;
-                return BuildExpansionTile(
-                  title: countryCodes.keys.toList()[index],
-                  imageURL: listOfSvgFlags[index],
-                  children: expansionTileChildrenMethod(context, items),
-                );
-              },
-            ),
-    );
-  }  
+        body: Obx(
+          () => controller.loading.value == true
+              ? const Center(child: CircularProgressIndicator())
+              : ListView.builder(
+                  itemCount: countryCodes.keys.toList().length,
+                  itemBuilder: (BuildContext context, int index) {
+                    var items = controller.allCountryList[index] as NewsModel;
+                    return BuildExpansionTile(
+                      title: countryCodes.keys.toList()[index],
+                      imageURL: listOfSvgFlags[index],
+                      children: expansionTileChildrenMethod(context, items),
+                    );
+                  },
+                ),
+        ));
+  }
 }
 
 Map<String, String> countryCodes = {
@@ -56,15 +57,17 @@ Map<String, String> countryCodes = {
   "UK": "gb"
 };
 
-List<Widget> expansionTileChildrenMethod(BuildContext context, NewsModel newList) {
+List<Widget> expansionTileChildrenMethod(
+    BuildContext context, NewsModel newList) {
   var items = newList.articles!;
   return [
     SizedBox(
-      height: MediaQuery.of(context).size.height / 2,
+      height: MediaQuery.of(context).size.height / 1.5,
       child: ListView.builder(
         itemCount: items.length,
         itemBuilder: (BuildContext context, int index) {
           return BuildCard(
+            enteredHeight: MediaQuery.of(context).size.height / 2.7,
             enteredChild: Column(
               children: [
                 BuildNetWorkImageCart(
@@ -72,10 +75,27 @@ List<Widget> expansionTileChildrenMethod(BuildContext context, NewsModel newList
                     incomingHeight: MediaQuery.of(context).size.height / 6,
                     incomingWidht: MediaQuery.of(context).size.width),
                 BuildDivider(enteredThickness: 5),
-                Text(
-                  items[index].title.toString(),
-                  textAlign: TextAlign.center,
-                  style: titleTextStyle,
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    items[index].title.toString(),
+                    textAlign: TextAlign.center,
+                    style: titleTextStyle,
+                  ),
+                ),
+                Link(
+                  
+                  uri: Uri.parse(items[index].url.toString()),
+                  target: LinkTarget.self,
+                  builder: (context, followLink) {
+                    return TextButton(
+                      onPressed: followLink,
+                      child: Text(
+                        "Haberi Okuyun".toUpperCase(),
+                        style: textLinkTextStyle,
+                      ),
+                    );
+                  },
                 ),
               ],
             ),
