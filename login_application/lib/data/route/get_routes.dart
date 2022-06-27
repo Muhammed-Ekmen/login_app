@@ -4,5 +4,5 @@ import 'package:login_application/loginPage/view/login_page.dart';
 
 List<GetPage<dynamic>>? getPages = [
   GetPage(name: "/", page: () => LoginPage()),
-  GetPage(name: "/homepage", page: () => const HomePage()),
+  GetPage(name: "/homepage", page: () =>  HomePage()),
 ];

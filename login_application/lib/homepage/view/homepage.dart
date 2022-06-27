@@ -8,18 +8,11 @@ import '../../data/widgets/buildDivider.dart';
 import '../../data/widgets/buildExpansionTile.dart';
 import '../../data/widgets/cards/buildCard.dart';
 import '../../data/widgets/cards/buildImageNetworkCart.dart';
+import '../models/news_model.dart';
 
-
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
+class HomePage extends StatelessWidget {
+  HomePage({Key? key}) : super(key: key);
   final HomePageController controller = Get.put(HomePageController());
-
   Map<String, String> countryCodes = {
     "Turkey": "tr",
     "The USA": "us",
@@ -32,7 +25,6 @@ class _HomePageState extends State<HomePage> {
     "Netherland": "nl",
     "UK": "gb"
   };
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,24 +40,26 @@ class _HomePageState extends State<HomePage> {
           : ListView.builder(
               itemCount: countryCodes.keys.toList().length,
               itemBuilder: (BuildContext context, int index) {
+                var items = controller.allCountryList[index] as NewsModel;
                 return BuildExpansionTile(
                   title: countryCodes.keys.toList()[index],
+                  // title: items.articles![index].title.toString(),
                   imageURL: listOfSvgFlags[index],
-                  children: expansionTileChildren(context),
+                  children: expansionTileChildren(context, items),
                 );
               },
             ),
     );
   }
 
-  List<Widget> expansionTileChildren(BuildContext context) {
+  List<Widget> expansionTileChildren(BuildContext context, NewsModel newList) {
+    var items = newList.articles!;
     return [
       SizedBox(
         height: MediaQuery.of(context).size.height / 2,
         child: ListView.builder(
-          itemCount: controller.newList.value.articles!.length,
+          itemCount: items.length,
           itemBuilder: (BuildContext context, int index) {
-            var items = controller.newList.value.articles!;
             return BuildCard(
               enteredChild: Column(
                 children: [
@@ -75,8 +69,7 @@ class _HomePageState extends State<HomePage> {
                       incomingWidht: MediaQuery.of(context).size.width),
                   BuildDivider(enteredThickness: 5),
                   Text(
-                    controller.allNewsList[index].value.articles![index].title.toString(),
-                    // items[index].title.toString(),
+                    items[index].title.toString(),
                     textAlign: TextAlign.center,
                     style: titleTextStyle,
                   ),
@@ -89,34 +82,3 @@ class _HomePageState extends State<HomePage> {
     ];
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-// NewsModel newList = NewsModel();
-
-// bool loading = false;
-// @override
-// void initState() {
-//   getNews();
-//   super.initState();
-// }
-
-// void getNews() async {
-//   setState(() {
-//     loading = true;
-//   });
-//   newList = await getNewsData();
-//   setState(() {
-//     loading = false;
-//   });
-// }
