@@ -1,34 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:login_application/data/constants/fake_api.dart';
-import 'package:login_application/data/constants/text_constants.dart';
 import 'package:get/get.dart';
-import 'package:login_application/homepage/controller/homepage_controller.dart';
-import '../../data/widgets/buildAppBar.dart';
-import '../../data/widgets/buildExpansionTile.dart';
+import 'package:login_application/data/fake_api.dart';
+import '../../../constants/textStyle/textStyleConstant.dart';
+import '../../../constants/texts/text_constants.dart';
+import '../../../widgets/buildAppBar.dart';
+import '../../../widgets/buildDivider.dart';
+import '../../../widgets/buildExpansionTile.dart';
+import '../../../widgets/cards/buildCard.dart';
+import '../../../widgets/cards/buildImageNetworkCart.dart';
+import '../controller/homepage_controller.dart';
 import '../models/news_models/news_model.dart';
 
-Map<String, String> countryCodes = {
-  "Turkey": "tr",
-  "The USA": "us",
-  "France": "fr",
-  "Germany": "de",
-  "Greece": "gr",
-  "Israel": "il",
-  "Italy": "it",
-  "Japan": "jp",
-  "Netherland": "nl",
-  "UK": "gb"
-};
-
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
   final HomePageController controller = Get.put(HomePageController());
+  
+  get titleTextStyle => null;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: BuildAppBar(
-        enteredTitle: const Text(
+        enteredTitle:  Text(
           titleOfHomePage,
           style: titleTextStyle,
         ),
@@ -47,11 +40,23 @@ class HomePage extends StatelessWidget {
               },
             ),
     );
-  }
+  }  
 }
 
-List<Widget> expansionTileChildrenMethod(
-    BuildContext context, NewsModel newList) {
+Map<String, String> countryCodes = {
+  "Turkey": "tr",
+  "The USA": "us",
+  "France": "fr",
+  "Germany": "de",
+  "Greece": "gr",
+  "Israel": "il",
+  "Italy": "it",
+  "Japan": "jp",
+  "Netherland": "nl",
+  "UK": "gb"
+};
+
+List<Widget> expansionTileChildrenMethod(BuildContext context, NewsModel newList) {
   var items = newList.articles!;
   return [
     SizedBox(
@@ -59,7 +64,6 @@ List<Widget> expansionTileChildrenMethod(
       child: ListView.builder(
         itemCount: items.length,
         itemBuilder: (BuildContext context, int index) {
-          var titleTextStyle;
           return BuildCard(
             enteredChild: Column(
               children: [

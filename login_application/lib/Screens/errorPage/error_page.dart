@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:login_application/data/widgets/buildAppBar.dart';
+import 'package:login_application/constants/texts/text_constants.dart';
+
+import '../../widgets/buildAppBar.dart';
 
 class ErrorPage extends StatelessWidget {
   const ErrorPage({Key? key}) : super(key: key);
@@ -7,7 +9,7 @@ class ErrorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BuildAppBar(enteredTitle: const Text("Error Page")),
+      appBar: BuildAppBar(enteredTitle: const Text(titleOfErrorPage)),
     );
   }
 }

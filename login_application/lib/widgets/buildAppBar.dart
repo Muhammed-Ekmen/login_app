@@ -1,7 +1,8 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
-import 'package:login_application/data/constants/color_constants.dart';
-import 'package:login_application/data/constants/text_constants.dart';
+
+import '../constants/colors/color_constants.dart';
+import '../constants/textStyle/textStyleConstant.dart';
 
 class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
   BuildAppBar({Key? key, required this.enteredTitle, this.enteredActionList,this.enteredColor=appMainColor})

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:login_application/homepage/services/get_news.dart';
+
 import '../models/news_models/news_model.dart';
+import '../services/get_news.dart';
 
 class HomePageController extends GetxController {
   dynamic allCountryList = <Rx<NewsModel>>[].obs;

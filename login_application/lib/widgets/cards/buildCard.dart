@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:login_application/data/constants/boxDecorations/build_card_box_decoration.dart';
+
+import '../../constants/boxDecorations/box_decorations.dart';
 
 class BuildCard extends StatelessWidget {
   BuildCard({Key? key, this.enteredChild}) : super(key: key);

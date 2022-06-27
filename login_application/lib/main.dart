@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:login_application/data/constants/color_constants.dart';
-import 'package:login_application/data/route/get_routes.dart';
-import 'errorPage/error_page.dart';
+import 'package:login_application/route/get_routes.dart';
+
+import 'Screens/errorPage/error_page.dart';
 
 Future<void> main() async {
   try {
@@ -21,6 +21,8 @@ Future<void> main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
+  
+  get appMainColor => null;
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,7 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
-import 'package:login_application/data/constants/color_constants.dart';
+
+import '../constants/colors/color_constants.dart';
 
 class BuildDivider extends StatelessWidget {
   BuildDivider({

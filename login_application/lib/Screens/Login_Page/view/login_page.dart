@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:login_application/data/constants/boxDecorations/login_box_decoration.dart';
-import 'package:login_application/data/constants/color_constants.dart';
 import 'package:get/get.dart';
-import 'package:login_application/loginPage/controller/login_page_controllers.dart';
-import '../../data/widgets/buildAppBar.dart';
-import '../../data/widgets/buildShaderMask.dart';
-import '../../data/widgets/buildTextFormField.dart';
-import '../utilities/verificationOfTextFormField.dart';
+import '../../../constants/boxDecorations/box_decorations.dart';
+import '../../../constants/colors/color_constants.dart';
+import '../../../widgets/buildAppBar.dart';
+import '../../../widgets/buildShaderMask.dart';
+import '../../../widgets/buildTextFormField.dart';
+import '../controller/login_page_controllers.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({Key? key}) : super(key: key);
@@ -83,8 +82,7 @@ class LoginPage extends StatelessWidget {
                   color: Colors.white,
                 ),
                 onPressed: () {
-                  verificationLogIn(context);
-                  // controller.verificationLogIn(context);
+                  controller.verificationLogIn(context);
                 },
               ),
             ],
