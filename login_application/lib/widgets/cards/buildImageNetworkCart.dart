@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../constants/colors/color_constants.dart';
+import '../../utilities/color_constants.dart';
 
 class BuildNetWorkImageCart extends StatelessWidget {
   BuildNetWorkImageCart({

@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 
 import '../../../widgets/buildAlert.dart';
 
-
 class LoginPageController extends GetxController {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();

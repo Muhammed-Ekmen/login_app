@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../constants/colors/color_constants.dart';
+import '../utilities/color_constants.dart';
 
 class BuildExpansionTile extends StatelessWidget {
   BuildExpansionTile(

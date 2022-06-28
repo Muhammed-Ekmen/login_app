@@ -5,7 +5,8 @@ import '../models/news_models/news_model.dart';
 import '../services/get_news.dart';
 
 class HomePageController extends GetxController {
-  dynamic allCountryList = <Rx<NewsModel>>[].obs;
+
+  RxList<NewsModel> allCountryList = <NewsModel>[].obs;
 
   RxBool loading = false.obs;
 
@@ -17,7 +18,7 @@ class HomePageController extends GetxController {
 
   void getNews() async {
     loading.value = true;
-    allCountryList=await getNewsDataList();
+    allCountryList.value=await getNewsDataList();
     loading.value = false;
     update();
     debugPrint(loading.value.toString());

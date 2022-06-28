@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../Screens/Login_Page/controller/login_page_controllers.dart';
-import '../constants/colors/color_constants.dart';
-import '../constants/textStyle/textStyleConstant.dart';
+import '../utilities/color_constants.dart';
+import '../utilities/textStyleConstant.dart';
 
 class BuildTextFormField extends StatelessWidget {
   final LoginPageController controller = Get.find();

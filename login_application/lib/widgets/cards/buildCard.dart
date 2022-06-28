@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../constants/boxDecorations/box_decorations.dart';
+import '../../utilities/box_decorations.dart';
 
 class BuildCard extends StatelessWidget {
   BuildCard({

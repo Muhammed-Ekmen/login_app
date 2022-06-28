@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:login_application/data/fake_api.dart';
 import 'package:url_launcher/link.dart';
-import '../../../constants/textStyle/textStyleConstant.dart';
-import '../../../constants/texts/text_constants.dart';
+import '../../../utilities/textStyleConstant.dart';
+import '../../../constants/text_constants.dart';
 import '../../../widgets/buildAppBar.dart';
 import '../../../widgets/buildDivider.dart';
 import '../../../widgets/buildExpansionTile.dart';
@@ -32,7 +32,7 @@ class HomePage extends StatelessWidget {
               : ListView.builder(
                   itemCount: countryCodes.keys.toList().length,
                   itemBuilder: (BuildContext context, int index) {
-                    var items = controller.allCountryList[index] as NewsModel;
+                    NewsModel items = controller.allCountryList[index];
                     return BuildExpansionTile(
                       title: countryCodes.keys.toList()[index],
                       imageURL: listOfSvgFlags[index],
@@ -78,13 +78,13 @@ List<Widget> expansionTileChildrenMethod(
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
+                    overflow: TextOverflow.ellipsis,
                     items[index].title.toString(),
                     textAlign: TextAlign.center,
                     style: titleTextStyle,
                   ),
                 ),
                 Link(
-                  
                   uri: Uri.parse(items[index].url.toString()),
                   target: LinkTarget.self,
                   builder: (context, followLink) {
