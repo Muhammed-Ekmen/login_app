@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:login_application/constants/base_urls.dart';
+import 'package:login_application/constants/text_constants.dart';
 import '../../../utilities/box_decorations.dart';
 import '../../../utilities/color_constants.dart';
 import '../../../widgets/buildAppBar.dart';
 import '../../../widgets/buildShaderMask.dart';
-import '../../../widgets/buildTextFormField.dart';
+import '../../../widgets/text_fields/buildTextFormField.dart';
 import '../controller/login_page_controllers.dart';
 
 class LoginPage extends StatelessWidget {
@@ -20,7 +22,7 @@ class LoginPage extends StatelessWidget {
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: BuildAppBar(
-            enteredColor: loginAppBarColor,
+            enteredColor: Colors.transparent,
             enteredTitle: appBarImageMethod(),
           ),
           body: loginBodyMethod(context),
@@ -35,8 +37,8 @@ class LoginPage extends StatelessWidget {
       children: [
         Container(
           decoration: loginBoxDecoration,
-          width:Get.width,
-          height:Get.height / 3,
+          width: Get.width,
+          height: Get.height / 3,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -45,9 +47,9 @@ class LoginPage extends StatelessWidget {
                 () => buildPasswordTF(),
               ),
               IconButton(
-                icon: const Icon(
+                icon: Icon(
                   FontAwesomeIcons.arrowRightFromBracket,
-                  color: Colors.white,
+                  color: buttonTextColor,
                 ),
                 onPressed: () {
                   controller.verificationLogIn(context);
@@ -62,51 +64,50 @@ class LoginPage extends StatelessWidget {
 
   BuildTextFormField buildPasswordTF() {
     return BuildTextFormField(
-                enteredFieldKey: controller.passwordKey,
-                enteredPrefixIcon: const Icon(
-                  FontAwesomeIcons.key,
-                  color: Colors.black,
-                ),
-                enteredController: controller.passwordController,
-                obscure: controller.showPassword.value,
-                enteredHintText: "Please Enter Password",
-                enteredSuffixIcon: IconButton(
-                  icon: controller.showPassword.value
-                      ? const Icon(
-                          FontAwesomeIcons.eye,
-                          color: appMainColor,
-                        )
-                      : const Icon(
-                          FontAwesomeIcons.eyeSlash,
-                          color: appMainColor,
-                        ),
-                  onPressed: () {
-                    controller.changePasswordStatue();
-                    debugPrint(controller.showPassword.value.toString());
-                  },
-                ),
-              );
+      enteredFieldKey: controller.passwordKey,
+      enteredPrefixIcon: const Icon(
+        FontAwesomeIcons.key,
+        color: Colors.black,
+      ),
+      enteredController: controller.passwordController,
+      obscure: controller.showPassword.value,
+      enteredHintText: passwordHintText,
+      enteredSuffixIcon: IconButton(
+        icon: controller.showPassword.value
+            ? const Icon(
+                FontAwesomeIcons.eye,
+                color: appMainColor,
+              )
+            : const Icon(
+                FontAwesomeIcons.eyeSlash,
+                color: appMainColor,
+              ),
+        onPressed: () {
+          controller.changePasswordStatue();
+        },
+      ),
+    );
   }
 
   BuildTextFormField buildEmailTF() {
     return BuildTextFormField(
-              enteredFieldKey: controller.emailKey,
-              enteredPrefixIcon: const Icon(
-                FontAwesomeIcons.envelope,
-                color: appMainColor,
-              ),
-              enteredController: controller.emailController,
-              enteredHintText: "Please enter the Email Adress",
-            );
+      enteredFieldKey: controller.emailKey,
+      enteredPrefixIcon: const Icon(
+        FontAwesomeIcons.envelope,
+        color: appMainColor,
+      ),
+      enteredController: controller.emailController,
+      enteredHintText: emailHintText,
+    );
   }
 
   Container appBarImageMethod() {
     return Container(
       alignment: Alignment.center,
-      width:Get.width,
-      height: 50,
+      width: Get.width,
+      height: Get.height/20 ,
       child: SvgPicture.network(
-        "https://servislet.com/img/logo.svg",
+        servisletLogo,
       ),
     );
   }

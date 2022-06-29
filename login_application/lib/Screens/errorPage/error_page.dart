@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:login_application/constants/text_constants.dart';
-
 import '../../widgets/buildAppBar.dart';
 
 class ErrorPage extends StatelessWidget {

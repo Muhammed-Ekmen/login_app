@@ -10,7 +10,6 @@ Future<void> main() async {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
     ErrorWidget.builder = (FlutterErrorDetails details) {
       return const ErrorPage();
-      // details.printError();
     };
     runApp(const MyApp());
   } catch (e) {
@@ -30,17 +29,10 @@ class MyApp extends StatelessWidget {
         primaryColor: appMainColor,
       ),
       initialRoute: "/",
+      defaultTransition: Transition.fadeIn,
+      transitionDuration: const Duration(seconds: 1),
       unknownRoute: GetPage(name: "/ErrorPage", page: () => const ErrorPage()),
       getPages: getPages,
     );
   }
 }
-
-///image cart
-///texformfield
-///dosyalama yapisi
-///getX
-///her dosya file tek bir ozellik olmaliu view yada data yada widget
-///
-///look at the other big flutter projects structure
-///http kullan

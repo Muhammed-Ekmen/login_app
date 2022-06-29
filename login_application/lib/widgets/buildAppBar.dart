@@ -18,7 +18,7 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: enteredActionList,
       titleTextStyle: titleTextStyle,
       elevation: 0,
-      backgroundColor: enteredColor,
+      backgroundColor: enteredColor ?? loginAppBarColor,
       flexibleSpace: FlexibleSpaceBar(
         centerTitle: true,
         title: enteredTitle,
