@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../utilities/color_constants.dart';
 
 class BuildNetWorkImageCart extends StatelessWidget {
-  BuildNetWorkImageCart({
+  const BuildNetWorkImageCart({
     Key? key,
     required this.incomingImage,
     required this.incomingHeight,
@@ -11,11 +11,11 @@ class BuildNetWorkImageCart extends StatelessWidget {
     this.incomingColor=appMainColor,
     this.incomingShape,
   }) : super(key: key);
-  double? incomingHeight;
-  double? incomingWidht;
-  Color? incomingColor;
-  BoxShape? incomingShape;
-  String incomingImage;
+  final double? incomingHeight;
+  final double? incomingWidht;
+  final Color? incomingColor;
+  final BoxShape? incomingShape;
+  final String incomingImage;
   @override
   Widget build(BuildContext context) {
     return Container(

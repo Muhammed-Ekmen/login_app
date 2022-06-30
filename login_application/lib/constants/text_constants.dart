@@ -7,3 +7,8 @@ const String titleOfErrorPage="Error Page";
 
 String passwordHintText="Please Enter Password";
 String emailHintText="Please enter the Email Adress";
+
+String materialTitleText="Login Application";
+
+String cupertinoDialogTitle="There Are Empty Fields";
+String cupertinoDialogContent="Please Check The Gap";

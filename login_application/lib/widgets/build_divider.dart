@@ -1,20 +1,20 @@
-// ignore: file_names
 import 'package:flutter/material.dart';
 
 import '../utilities/color_constants.dart';
 
+@immutable
 class BuildDivider extends StatelessWidget {
-  BuildDivider({
+  const BuildDivider({
     Key? key,
     this.enteredColor = appMainColor,
     this.enteredThickness = 2,
     this.enteredIndent,
     this.enteredEndIndent,
   }) : super(key: key);
-  Color? enteredColor;
-  double? enteredEndIndent;
-  double? enteredIndent;
-  double? enteredThickness;
+  final Color? enteredColor;
+  final double? enteredEndIndent;
+  final double? enteredIndent;
+  final double? enteredThickness;
   @override
   Widget build(BuildContext context) {
     return Divider(

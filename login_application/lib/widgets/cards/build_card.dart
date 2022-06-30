@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import '../../utilities/box_decorations.dart';
 
+@immutable
 class BuildCard extends StatelessWidget {
-  BuildCard({
+  const BuildCard({
     Key? key,
     this.enteredChild,
     this.enteredHeight,
     this.enteredWidth,
   }) : super(key: key);
-  Widget? enteredChild;
-  double? enteredHeight;
-  double? enteredWidth;
+  final Widget? enteredChild;
+  final double? enteredHeight;
+  final double? enteredWidth;
   @override
   Widget build(BuildContext context) {
     return Container(

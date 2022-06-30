@@ -13,9 +13,12 @@ class BuildAlertDialog extends StatelessWidget {
   String enteredContent;
   @override
   Widget build(BuildContext context) {
+
     return CupertinoAlertDialog(
       title: Text(enteredTitle),
       content: Text(enteredContent),
     );
   }
 }
+
+

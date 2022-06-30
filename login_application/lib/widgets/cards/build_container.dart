@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 
 import '../../utilities/color_constants.dart';
 
+@immutable
 class BuildContainer extends StatelessWidget {
-  BuildContainer({
+  const BuildContainer({
     Key? key,
     required this.enteredWidht,
     required this.enteredHeight,
@@ -12,11 +13,11 @@ class BuildContainer extends StatelessWidget {
     this.enteredChild,
     this.enteredColor = appMainColor,
   }) : super(key: key);
-  double enteredWidht;
-  double enteredHeight;
-  Color enteredColor;
-  BorderRadiusGeometry? enteredBorderRadius;
-  Widget? enteredChild;
+  final double enteredWidht;
+  final double enteredHeight;
+  final Color enteredColor;
+  final BorderRadiusGeometry? enteredBorderRadius;
+  final Widget? enteredChild;
   @override
   Widget build(BuildContext context) {
     return Container(

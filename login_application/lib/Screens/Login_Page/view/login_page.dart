@@ -6,9 +6,9 @@ import 'package:login_application/constants/base_urls.dart';
 import 'package:login_application/constants/text_constants.dart';
 import '../../../utilities/box_decorations.dart';
 import '../../../utilities/color_constants.dart';
-import '../../../widgets/buildAppBar.dart';
-import '../../../widgets/buildShaderMask.dart';
-import '../../../widgets/text_fields/buildTextFormField.dart';
+import '../../../widgets/build_appbar.dart';
+import '../../../widgets/build_shadermask.dart';
+import '../../../widgets/text_fields/build_text_form_field.dart';
 import '../controller/login_page_controllers.dart';
 
 class LoginPage extends StatelessWidget {
@@ -105,7 +105,7 @@ class LoginPage extends StatelessWidget {
     return Container(
       alignment: Alignment.center,
       width: Get.width,
-      height: Get.height/20 ,
+      height: Get.height / 20,
       child: SvgPicture.network(
         servisletLogo,
       ),

@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-import '../../Screens/Login_Page/controller/login_page_controllers.dart';
 import '../../utilities/color_constants.dart';
-import '../../utilities/textStyleConstant.dart';
+import '../../utilities/textstyle_constants.dart';
 
 class BuildTextFormField extends StatelessWidget {
-  final LoginPageController controller = Get.find();
-  BuildTextFormField({
+  const BuildTextFormField({
     Key? key,
     required this.enteredFieldKey,
     required this.enteredController,
@@ -18,14 +15,14 @@ class BuildTextFormField extends StatelessWidget {
     this.enteredPrefixIcon,
     this.obscure=false,
   }) : super(key: key);
-  TextEditingController enteredController;
-  String? enteredHintText;
-  Widget? enteredSuffixIcon;
-  Icon? enteredPrefixIcon;
-  BorderRadius? enteredBorderRadius;
-  bool? obscure;
-  Key? enteredFieldKey;
-  TextInputType? enteredKeyboardType;
+  final TextEditingController enteredController;
+  final String? enteredHintText;
+  final Widget? enteredSuffixIcon;
+  final Icon? enteredPrefixIcon;
+  final BorderRadius? enteredBorderRadius;
+  final bool? obscure;
+  final Key? enteredFieldKey;
+  final TextInputType? enteredKeyboardType;
   @override
   Widget build(BuildContext context) {
     return Padding(

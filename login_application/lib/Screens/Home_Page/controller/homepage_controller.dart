@@ -5,7 +5,6 @@ import '../models/news_models/news_model.dart';
 import '../services/get_news.dart';
 
 class HomePageController extends GetxController {
-
   RxList<NewsModel> allCountryList = <NewsModel>[].obs;
 
   RxBool loading = false.obs;
@@ -18,13 +17,17 @@ class HomePageController extends GetxController {
 
   void getNews() async {
     loading.value = true;
-    allCountryList.value=await getNewsDataList();
+    allCountryList.value = await getNewsDataList();
     loading.value = false;
     update();
     debugPrint(loading.value.toString());
   }
 
-  // changeLoadingStatue() {
-  //   loading = loading.value == true ? RxBool(false) : RxBool(true);
-  // }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+  }
 }
+
